@@ -9,23 +9,23 @@ import os
 
 df = pd.read_csv(os.path.join('ampk_dock','ampk_compounds.csv'))
 
-# Convert SMILES to MOL to PDBQT
-for index, row in df.iterrows():
-     smiles = row['canonical_smiles']
-     ligand_id = row['LigandID']
-     
-     mol_filepath = os.path.join('ampk_dock', 'mols')
-     
-     # convert smiles to mol
-     mol_file = os.path.join(mol_filepath, f'{ligand_id}.mol')
-     ad.convert_smiles_mol(smiles,mol_file)
-     print(f"Successfully converted {ligand_id} at index {index}")
-
-     # convert mol to pdbqt
-     mol_file = os.path.join(mol_filepath, f'{ligand_id}.mol')
-     pdbqt_file = os.path.join(mol_filepath, f'{ligand_id}.pdbqt')
-     ad.change_mol_pdbqt(mol_file,pdbqt_file)
-     print(f"Successfully converted {ligand_id} at index {index}")
+## Convert SMILES to MOL to PDBQT
+#for index, row in df.iterrows():
+#     smiles = row['canonical_smiles']
+#     ligand_id = row['LigandID']
+#     
+#     mol_filepath = os.path.join('ampk_dock', 'mols')
+#     
+#     # convert smiles to mol
+#     mol_file = os.path.join(mol_filepath, f'{ligand_id}.mol')
+#     ad.convert_smiles_mol(smiles,mol_file)
+#     print(f"Successfully converted {ligand_id} at index {index}")
+#
+#     # convert mol to pdbqt
+#     mol_file = os.path.join(mol_filepath, f'{ligand_id}.mol')
+#     pdbqt_file = os.path.join(mol_filepath, f'{ligand_id}.pdbqt')
+#     ad.change_mol_pdbqt(mol_file,pdbqt_file)
+#     print(f"Successfully converted {ligand_id} at index {index}")
 
 
 # Docking Loop
