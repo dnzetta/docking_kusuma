@@ -1374,6 +1374,4 @@ Successfully changed SMILES to MOL! File saved to ampk_dock/mols/SCHEMBL1395428.
 Successfully converted SCHEMBL1395428 at index 343
 Successfully changed MOL to PDBQT! File saved to ampk_dock/mols/SCHEMBL1395428.pdbqt
 Successfully converted SCHEMBL1395428 at index 343
-Successfully changed SMILES to MOL! File saved to ampk_dock/mols/GSK317314A.molComputing Vina grid ... done.
-Computing Vina grid ... done.
-Computing Vina grid ... done.
+Successfully changed SMILES to MOL! File saved to ampk_dock/mols/GSK317314A.molComputing Vina grid ... 

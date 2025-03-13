@@ -118,25 +118,25 @@ def main():
     This will run all the function including vina_run.
     '''
     input_path = 'mols'
-    # pdb to pdbqt
-    input_receptor = 'ampk_prot' #input("Please type your receptor name ")
-    input_file = os.path.join(input_path, input_receptor+'.pdb')      # Replace with your input file path and file name
-    output_file = os.path.join(input_path, input_receptor+'.pdbqt')   # Replace with your desired output file path
-    change_pdb_pdbqt(input_file, output_file)
-    
-    #clean pdbqt
-    input_path = os.path.join('mols',input_receptor+'.pdbqt')           
-    output_path = os.path.join('mols',input_receptor+'_clean.pdbqt')     
-    clean_pdbqt(input_path, output_path)
+    ## pdb to pdbqt
+    #input_receptor = 'ampk_prot' #input("Please type your receptor name ")
+    #input_file = os.path.join(input_path, input_receptor+'.pdb')      # Replace with your input file path and file name
+    #output_file = os.path.join(input_path, input_receptor+'.pdbqt')   # Replace with your desired output file path
+    #change_pdb_pdbqt(input_file, output_file)
+    #
+    ##clean pdbqt
+    #input_path = os.path.join('mols',input_receptor+'.pdbqt')           
+    #output_path = os.path.join('mols',input_receptor+'_clean.pdbqt')     
+    #clean_pdbqt(input_path, output_path)
     
     #smiles to mol
-    smiles = 'O=C(O)C1CN(Cc2ccc(OCc3ccc(Cl)c(Cl)c3)cc2)C1' #input("Please type your SMILES strings ")
-    input_name = 'CHEMBL3741589' #input("Please type your desire output file name ")
+    smiles = 'CN(C)C(=N)N=C(N)N' #input("Please type your SMILES strings ") CN(C)C(=N)NC(N)=N
+    input_name = 'metformin' #input("Please type your desire output file name ")
     output_file = os.path.join('mols', input_name+'.mol')
     convert_smiles_mol(smiles,output_file)
     
     # mol to pdbqt
-    input_ligand = 'CHEMBL3741589'  #input("Please type your ligand name ")
+    input_ligand = 'metformin'  #input("Please type your ligand name ")
     input_file = os.path.join('mols', input_ligand+'.mol')      # Replace with your input file path and file name
     output_file = os.path.join('mols', input_ligand+'.pdbqt')   # Replace with your desired output file path
     change_mol_pdbqt(input_file, output_file)
