@@ -9,23 +9,23 @@ import os
 
 df = pd.read_csv(os.path.join('ampk_dock','ampk_compounds.csv'))
 
-# Convert SMILES to MOL to PDBQT
-for index, row in df.iterrows():
-     smiles = row['canonical_smiles']
-     ligand_id = row['LigandID']
-     
-     mol_filepath = os.path.join('ampk_dock', 'mols')
-     
-     # convert smiles to mol
-     mol_file = os.path.join(mol_filepath, f'{ligand_id}.mol')
-     ad.convert_smiles_mol(smiles,mol_file)
-     print(f"Successfully converted {ligand_id} at index {index}")
-
-     # convert mol to pdbqt
-     mol_file = os.path.join(mol_filepath, f'{ligand_id}.mol')
-     pdbqt_file = os.path.join(mol_filepath, f'{ligand_id}.pdbqt')
-     ad.change_mol_pdbqt(mol_file,pdbqt_file)
-     print(f"Successfully converted {ligand_id} at index {index}")
+## Convert SMILES to MOL to PDBQT
+#for index, row in df.iterrows():
+#     smiles = row['canonical_smiles']
+#     ligand_id = row['LigandID']
+#     
+#     mol_filepath = os.path.join('ampk_dock', 'mols')
+#     
+#     # convert smiles to mol
+#     mol_file = os.path.join(mol_filepath, f'{ligand_id}.mol')
+#     ad.convert_smiles_mol(smiles,mol_file)
+#     print(f"Successfully converted {ligand_id} at index {index}")
+#
+#     # convert mol to pdbqt
+#     mol_file = os.path.join(mol_filepath, f'{ligand_id}.mol')
+#     pdbqt_file = os.path.join(mol_filepath, f'{ligand_id}.pdbqt')
+#     ad.change_mol_pdbqt(mol_file,pdbqt_file)
+#     print(f"Successfully converted {ligand_id} at index {index}")
 
 
 # Docking Loop
@@ -40,8 +40,8 @@ for index, ligand_id in df['LigandID'].items():
     output_txt = os.path.join('ampk_dock', 'txt')
     
     # Define the center and box size
-    center_x, center_y, center_z = 120.37, -35.97, 36.02
-    search_x, search_y, search_z = 123.97, 158.43, 104.13
+    center_x, center_y, center_z = 89.18, -3597, 36.02
+    search_x, search_y, search_z = 186.36, 158.43, 104.13
     
     # Prepare the output file for capturing terminal output
     output_file = os.path.join(output_txt, f"{ligand_id}.txt")
