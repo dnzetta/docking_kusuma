@@ -40,7 +40,7 @@ for index, ligand_id in df['LigandID'].items():
     output_txt = os.path.join('ampk_dock', 'txt')
     
     # Define the center and box size
-    center_x, center_y, center_z = 89.18, -3597, 36.02
+    center_x, center_y, center_z = 89.18, -35.97, 36.02
     search_x, search_y, search_z = 186.36, 158.43, 104.13
     
     # Prepare the output file for capturing terminal output

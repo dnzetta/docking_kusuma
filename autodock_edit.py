@@ -104,9 +104,9 @@ def vina_run(receptor_path, ligand_path, output_filepath,input_receptor,input_li
     v.write_pose(os.path.join(output_filepath,input_receptor+'_'+input_ligand + '_minimized.pdbqt'), overwrite=True)
 
     # Dock the ligand
-    v.dock(exhaustiveness=32, n_poses=5)
+    v.dock(exhaustiveness=32, n_poses=10)
     poses_path = os.path.join(output_filepath,input_receptor+'_'+input_ligand + '_vina_out.pdbqt')
-    v.write_poses(poses_path, n_poses=5, overwrite=True)
+    v.write_poses(poses_path, n_poses=10, overwrite=True)
     
     
     return print("Successfully done AUTODOCK VINA")
@@ -119,7 +119,7 @@ def main():
     '''
     input_path = 'mols'
     ## pdb to pdbqt
-    #input_receptor = 'ampk_prot' #input("Please type your receptor name ")
+    input_receptor = 'ampk_prot' #input("Please type your receptor name ")
     #input_file = os.path.join(input_path, input_receptor+'.pdb')      # Replace with your input file path and file name
     #output_file = os.path.join(input_path, input_receptor+'.pdbqt')   # Replace with your desired output file path
     #change_pdb_pdbqt(input_file, output_file)
@@ -129,32 +129,32 @@ def main():
     #output_path = os.path.join('mols',input_receptor+'_clean.pdbqt')     
     #clean_pdbqt(input_path, output_path)
     
-    #smiles to mol
-    smiles = 'CN(C)C(=N)N=C(N)N' #input("Please type your SMILES strings ") CN(C)C(=N)NC(N)=N
-    input_name = 'metformin' #input("Please type your desire output file name ")
-    output_file = os.path.join('mols', input_name+'.mol')
-    convert_smiles_mol(smiles,output_file)
-    
-    # mol to pdbqt
-    input_ligand = 'metformin'  #input("Please type your ligand name ")
-    input_file = os.path.join('mols', input_ligand+'.mol')      # Replace with your input file path and file name
-    output_file = os.path.join('mols', input_ligand+'.pdbqt')   # Replace with your desired output file path
-    change_mol_pdbqt(input_file, output_file)
-    
-    ## insert center and box_size
-    #center_x = float(input("Please type your center x "))
-    #center_y = float(input("Please type your center y "))
-    #center_z = float(input("Please type your center z "))
+    ##smiles to mol
+    #smiles = 'CN(C)C(=N)N=C(N)N' #input("Please type your SMILES strings ") CN(C)C(=N)NC(N)=N
+    #input_name = 'metformin' #input("Please type your desire output file name ")
+    #output_file = os.path.join('mols', input_name+'.mol')
+    #convert_smiles_mol(smiles,output_file)
     #
-    #search_x = float(input("Please type your dimension x "))
-    #search_y = float(input("Please type your dimension y "))
-    #search_z = float(input("Please type your dimension z "))
-    #
-    ## vina_run
-    #output_filepath='output'
-    #receptor_path='mols'
-    #ligand_path='mols/train/test'
-    #vina_run(receptor_path, ligand_path, output_filepath,input_receptor,input_ligand,center_x, center_y, center_z, search_x, search_y, search_z)
+    ## mol to pdbqt
+    input_ligand = 'beta-lapachone'  #input("Please type your ligand name ")
+    #input_file = os.path.join('mols', input_ligand+'.mol')      # Replace with your input file path and file name
+    #output_file = os.path.join('mols', input_ligand+'.pdbqt')   # Replace with your desired output file path
+    #change_mol_pdbqt(input_file, output_file)
+    
+    # insert center and box_size
+    center_x = float(89.18)   #input("Please type your center x "))
+    center_y = float(-35.97)    #input("Please type your center y "))
+    center_z = float(36.02) #input("Please type your center z "))
+    
+    search_x = float(186.36)    #input("Please type your dimension x "))
+    search_y = float(158.43)    #input("Please type your dimension y "))
+    search_z = float(104.13)    #input("Please type your dimension z "))
+    
+    # vina_run
+    output_filepath='ampk_dock/autodock'
+    receptor_path='ampk_dock/protein'
+    ligand_path='ampk_dock/mols'
+    vina_run(receptor_path, ligand_path, output_filepath,input_receptor,input_ligand,center_x, center_y, center_z, search_x, search_y, search_z)
 main()   
 #if "__name__" == "__main__":
 #    main()

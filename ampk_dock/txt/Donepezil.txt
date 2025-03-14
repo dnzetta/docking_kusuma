@@ -1,0 +1,23 @@
+Computing Vina grid ... done.
+Performing local search ... done.
+Performing docking (random seed: 463649736) ... 
+0%   10   20   30   40   50   60   70   80   90   100%
+|----|----|----|----|----|----|----|----|----|----|
+***************************************************
+Score before minimization: 0.000 (kcal/mol)
+Score after minimization : 0.000 (kcal/mol)
+Successfully done AUTODOCK VINA
+
+mode |   affinity | dist from best mode
+     | (kcal/mol) | rmsd l.b.| rmsd u.b.
+-----+------------+----------+----------
+   1       -7.484          0          0
+   2       -7.377      61.38      63.32
+   3       -7.134      61.42      63.01
+   4        -7.11      2.938      4.463
+   5       -6.964      68.08      72.15
+   6       -6.577       79.5      81.54
+   7       -6.038      14.98      19.16
+   8       -6.018      77.64      81.25
+   9       -5.986      80.49      84.29
+  10       -5.883      14.28      16.31
